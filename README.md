@@ -122,6 +122,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
     - `Max Reflection` : Defines the maximum number of reflections after being emitted from the listener. Once this limit is reached, the ray will stop and no additional sound paths will be calculated.
     - `Ray Count` : Specifies the total number of rays emitted during the tracing process. Higher values improve the accuracy of sound simulation, but may have a significant performance cost.
     - `Max Trace Time` : Determines the maximum trace time for each ray. As rays travel through the scene, their intensity is attenuated based on distance and time. When this time limit is reached, the sound is considered inaudible and is discarded.
+    - `Max Active Sound Sources`: The maximum number of concurrently active sound sources to trace against per frame. When this limit is exceeded, Any sounds beyond this count will fall back to standard audio playback without tracing effects.
     - `Custom Primitive Data Start Slot Index` : Audio Tracing encodes Sound Material data into **Custom Primitive Data**. If your project uses this data elsewhere (e.g., for visual shaders or gameplay logic), you can offset the start slot index to avoid conflicts. 
     As of **Unreal Engine 5.6**, up to **36** custom primitive data values can be stored per object. The Audio Tracing Plugin groups **4 values per slot** , effectively allowing for **9 usable slots [0, 8]**.
     If an invalid slot index is specified, the system will fall back to using the default material.
