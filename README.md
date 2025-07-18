@@ -142,9 +142,9 @@ These materials enable accurate simulation of acoustic interactions such as refl
 * AudioTracing.ShowDebugVirtualAudio
 * AudioTracing.HardwareRayTracing
 * AudioTracing.HardwareRayTracing.MaxReflectionDepth
-* AudioTracing.HardwareRayTracing.RayTracingNormalBias
 * AudioTracing.HardwareRayTracing.MaxTraceTime
 * AudioTracing.HardwareRayTracing.MaxActiveSoundSources
+* AudioTracing.HardwareRayTracing.RayTracingNormalBias
 * AudioTracing.HardwareRayTracing.DebugSoundMaterial
 
 # Known Issue
