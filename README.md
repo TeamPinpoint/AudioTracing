@@ -133,3 +133,8 @@ These materials enable accurate simulation of acoustic interactions such as refl
     - The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, the plugin uses fixed RT60 thresholds of 3.0, 7.0, and 15.0 seconds to classify the space.
         - In future versions, this classification will be made dynamic by referencing the **Decay Time** parameter defined within the assigned **Submix Effect Reverb Preset Asset**. This will allow more flexible and accurate control over RT60-based reverb behavior.
     - You may override the default behavior by creating and assigning custom Reverb Submix Assets, allowing you to tailor reverb effects to better fit your sound design.
+
+# Known Issue
+- If sound does not propagate correctly in enclosed spaces, make sure that the mesh supports Ray Tracing. AudioTracing relies on the same geometry used for GPU Ray Tracing, so if the mesh does not support it, AudioTracing will not function properly.
+
+-  AudioTracing provides a default Attenuation Asset. Since AudioTracing builds upon Unreal Engine's native Attenuation system to perform post-processing on audio, any custom attenuation effects set by the user will take precedence and be applied before AudioTracing processing.
