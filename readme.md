@@ -1,3 +1,5 @@
+![AudioTracing](img/AudioTracing.png)
+
 # **Audio Tracing**
 
 ## **Hardware-accelerated ray tracing plugin for audio simulation.**
