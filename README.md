@@ -134,6 +134,18 @@ These materials enable accurate simulation of acoustic interactions such as refl
         - In future versions, this classification will be made dynamic by referencing the **Decay Time** parameter defined within the assigned **Submix Effect Reverb Preset Asset**. This will allow more flexible and accurate control over RT60-based reverb behavior.
     - You may override the default behavior by creating and assigning custom Reverb Submix Assets, allowing you to tailor reverb effects to better fit your sound design.
 
+# Available Console Variables
+* AudioTracing.SoundSpeed
+* AudioTracing.HeadWidth
+* AudioTracing.CustomPrimitiveDataStartSlotIndex
+* AudioTracing.ShowDebugVirtualAudio
+* AudioTracing.HardwareRayTracing
+* AudioTracing.HardwareRayTracing.MaxReflectionDepth
+* AudioTracing.HardwareRayTracing.RayTracingNormalBias
+* AudioTracing.HardwareRayTracing.MaxTraceTime
+* AudioTracing.HardwareRayTracing.MaxActiveSoundSources
+* AudioTracing.HardwareRayTracing.DebugSoundMaterial
+
 # Known Issue
 - If sound does not propagate correctly in enclosed spaces, make sure that the mesh supports Ray Tracing. AudioTracing relies on the same geometry used for GPU Ray Tracing, so if the mesh does not support it, AudioTracing will not function properly.
 
