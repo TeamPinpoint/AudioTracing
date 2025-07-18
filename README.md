@@ -13,7 +13,7 @@ Users can apply Audio Tracing to existing sounds with **only minimal modificati
 Additionally, the Sound Material feature allows for detailed adjustment of the acoustic properties of each surface. You can **specifically define the acoustic response of each surface** by individually setting scattering coefficients, reflectivity, and absorption coefficients for materials such as wood, glass, and concrete.
 
 
-## Recommended Specifications
+# Recommended Specifications
 
 - A DirectX 12 compatible graphics card with support for ray tracing is required.
 
@@ -33,11 +33,11 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 | RAM | 32GB | Stable processing of multiple Submixes + MetaSounds and their effects simultaneously. |
 
 
-## How to Apply Audio Tracing Plugin
+# How to Apply Audio Tracing Plugin
 
 - You have to follow 4 steps for apply Audio Tracing plugin.
 
-### 1. Enable Hardware Ray Tracing
+## 1. Enable Hardware Ray Tracing
 
 ![Hardware Ray Tracing](img/ProjectSettings_Render1.png)
 
@@ -55,7 +55,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 - If there is a Post Process Volume in your scene, also check its `Global Illumination` and `Reflections` settings.
 
-### 2. Apply Plugin on Project Settings
+## 2. Apply Plugin on Project Settings
 
 ![Apply Plugin](img/ProjectSettings_Windows.png)
 
@@ -63,7 +63,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 - Change `Spatialization Plugin` to `Audio Tracing Spatializer`
 - Change `Source Data Override Plugin` to `AudioTracingAudioSourceDataOverride`
 
-### 3. Attach  Audio Tracing Listener Component to Pawn
+## 3. Attach  Audio Tracing Listener Component to Pawn
 
 ![Listener Component](img/ListenerComp.png)
 
@@ -72,7 +72,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 - Attach the `Audio Tracing Listener` component to your Character or Pawn.
 - This component serves as the starting point for audio ray tracing in the scene.
 
-### 4. Configuring the 'Sound Attenuation' Asset
+## 4. Configuring the 'Sound Attenuation' Asset
 
 - **In the final step,** add a **Sound Attenuation** asset to your sound in order to apply spatialization and plugin-based processing.
 
@@ -84,7 +84,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 - Under the **Attenuation (Source Data Override)** section, check `Enable Source Data Override` so that the plugin can use the audio for post-processing.
 
-## Audio Tracing Sound Material Component
+# Audio Tracing Sound Material Component
 
 - **Audio Tracing** supports the use of custom **Sound Materials** that can be assigned to environmental objects.
 These materials enable accurate simulation of acoustic interactions such as reflection, scattering, and absorption based on the physical properties of each surface.
@@ -111,7 +111,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 > 💡 The absorption coefficient is also influenced by the **scale** of the attached object. The larger the object, the more sound energy is attenuated. Therefore, the final transmission loss is a combination of the coefficient value and the object’s scale in the world. When configuring this parameter, be mindful of both factors to ensure accurate acoustic behavior.
 
-## AudioTracing Environment setting on Project Settings
+# AudioTracing Environment setting on Project Settings
 
 - The **Audio Tracing Plugin** provides a set of configurable parameters in the **Project Settings**, allowing you to control various aspects of the ray tracing process.
 - Ray tracing performance settings can be tuned for different use cases, enabling adaptive sound tracing behavior based on the scenario.
