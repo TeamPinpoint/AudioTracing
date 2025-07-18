@@ -155,5 +155,4 @@ These materials enable accurate simulation of acoustic interactions such as refl
 ---
 
 ### Disclaimer
-> [!NOTE]
 > This product was independently developed by me(us) while participating in the Epic Project, a developer-support program of the KRAFTON JUNGLE GameTech Lab. All rights, title, and interest in and to the product are exclusively vested in me(us). Krafton, Inc. was not involved in its development and distribution and disclaims all representations and warranties, express or implied, and assumes no responsibility or liability for any consequences arising from the use of this product.
