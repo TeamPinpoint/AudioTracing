@@ -15,7 +15,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 ## Recommended Specifications
 
-- A DirectX 12 compatible RTX graphics card is required.
+- A DirectX 12 compatible graphics card with support for ray tracing is required.
 
 - Specifications used for development:
     - CPU: Intel i7-14700 2.10GHz
@@ -39,25 +39,25 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 ### 1. Enable Hardware Ray Tracing
 
-![ProjectSettings_Render1](img/ProjectSettings_Render1.png)
+![Hardware Ray Tracing](img/ProjectSettings_Render1.png)
 
-![ProjectSettings_Render2](img/ProjectSettings_Render2.png)
+![Lumen Hardware Ray Tracing](img/ProjectSettings_Render2.png)
 
 - Project Settings → Engine → Rendering
 - Check `Support Hardware Ray Tracing` and Check `Use Hardeware Ray Tracing when available`
 - Audio Tracing work under UE Hardware Ray Tracing system
 
-![ProjectSettings_Render3](img/ProjectSettings_Render3.png)
+![Global Illumination and Reflection](img/ProjectSettings_Render3.png)
 
 - Must use Lumen Global Illumination or Reflections. (At least, one of them needs to use Lumen)
 
-![ProjectSettings_Render4](img/ProjectSettings_Render4.png)
+![Post Process Volume](img/ProjectSettings_Render4.png)
 
 - If there is a Post Process Volume in your scene, also check its `Global Illumination` and `Reflections` settings.
 
 ### 2. Apply Plugin on Project Settings
 
-![ProjectSettings_Windows](img/ProjectSettings_Windows.png)
+![Apply Plugin](img/ProjectSettings_Windows.png)
 
 - Project Settings → Platforms → Windows → Audio (Only support Windows)
 - Change `Spatialization Plugin` to `Audio Tracing Spatializer`
@@ -65,9 +65,9 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 ### 3. Attach  Audio Tracing Listener Component to Pawn
 
-![ListenerComp](img/ListenerComp.png)
+![Listener Component](img/ListenerComp.png)
 
-![ListenerComp2](img/ListenerComp2.png)
+![ATListener](img/ListenerComp2.png)
 
 - Attach the `Audio Tracing Listener` component to your Character or Pawn.
 - This component serves as the starting point for audio ray tracing in the scene.
@@ -76,11 +76,11 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 - **In the final step,** add a **Sound Attenuation** asset to your sound in order to apply spatialization and plugin-based processing.
 
-![SoundAttenuation1](img/SoundAttenuation1.png)
+![Spatialization](img/SoundAttenuation1.png)
 
 - Under the **Attenuation (Spatialization)** section, check `Enable Spatialization`, and set the **Spatialization Method** to `Plugin-Spatialized`.
 
-![SoundAttenuation2](img/SoundAttenuation2.png)
+![Source Data Override](img/SoundAttenuation2.png)
 
 - Under the **Attenuation (Source Data Override)** section, check `Enable Source Data Override` so that the plugin can use the audio for post-processing.
 
@@ -89,14 +89,14 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 - **Audio Tracing** supports the use of custom **Sound Materials** that can be assigned to environmental objects.
 These materials enable accurate simulation of acoustic interactions such as reflection, scattering, and absorption based on the physical properties of each surface.
 
-![MaterialComp](img/MaterialComp.png)
+![Audio Tracing Sound Material](img/MaterialComp.png)
 
-![SoundMaterial1](img/SoundMaterial1.png)
+![ATSoundMaterial](img/SoundMaterial1.png)
 
 - Attach an `Audio Tracing Sound Material` to the object to be used at the level.
 - `Audio Tracing Sound Material` must be placed under a **Primitive Component**. If not, the material will not function correctly.
 
-![SoundMaterial2](img/SoundMaterial2.png)
+![Material](img/SoundMaterial2.png)
 
 - `Audio Tracing Sound Material` has 3 attribute.
 - **Scattering Factor**: Determines the directionality of reflected sound. It controls the ratio between mirror-like (specular) reflections, which bounce at a predictable angle, and scattered (diffuse) reflections, which travel in many random directions.
@@ -116,7 +116,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 - The **Audio Tracing Plugin** provides a set of configurable parameters in the **Project Settings**, allowing you to control various aspects of the ray tracing process.
 - Ray tracing performance settings can be tuned for different use cases, enabling adaptive sound tracing behavior based on the scenario.
 
-![ProjectSettings](img/ProjectSettings.png)
+![Project Settings Audio Tracing](img/ProjectSettings.png)
 
 - Hardware RayTracing
     - `Max Reflection` : Defines the maximum number of reflections after being emitted from the listener. Once this limit is reached, the ray will stop and no additional sound paths will be calculated.
@@ -127,7 +127,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
     If an invalid slot index is specified, the system will fall back to using the default material.
 - General
     - `Speed of Sound (cm/s)` : Defines the speed at which sound propagates through the environment. Lower values simulate slower sound travel, resulting in longer delays between direct and reflected sounds.
-    - `Listener Head Width(cm)` : Specifies the distance between the listener's left and right ears. This value affects binaural spatialization and interaural time/level differences used in 3D audio rendering.
+    - `Listener Head Width (cm)` : Specifies the distance between the listener's left and right ears. This value affects binaural spatialization and interaural time/level differences used in 3D audio rendering.
 - Reverb
     - Audio Tracing uses preconfigured Reverb Submix Assets depending on the spatial characteristics of the environment.
     - The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, the plugin uses fixed RT60 thresholds of 3.0, 7.0, and 15.0 seconds to classify the space.
