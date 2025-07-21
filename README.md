@@ -93,12 +93,27 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 ![ATSoundMaterial](img/SoundMaterial1.png)
 
-- Attach an `Audio Tracing Sound Material` to the object to be used at the level.
-- `Audio Tracing Sound Material` must be placed under a **Primitive Component**. If not, the material will not function correctly.
+- Attach an `Audio Tracing Sound Material Component` to the object to be used at the level.
+- `Audio Tracing Sound Material Component` must be placed under a **Primitive Component**. If not, the material will not function correctly.
 
 ![Material](img/SoundMaterial2.png)
 
-- `Audio Tracing Sound Material` has 3 attribute.
+- You can set the **Sound Material** Asset in the Details panel.
+
+> 💡 You can select one or more meshes placed in the world, right-click, and select **Add Audio Tracing Sound Material Components** to add multiple **Audio Tracing Sound Material Components** with a single click.
+
+# Sound Material Asset
+
+- You can create a **Sound Material** in the Content Browser by right-clicking and selecting Sound Material from the **Audio** category.
+
+![Create Sound Material Asset](img/SoundMaterialAsset1.png)
+
+![Sound Material Asset](img/SoundMaterialAsset2.png)
+
+- **Sound Material** has 3 attribute.
+
+![Material Parameters](img/SoundMaterialAsset3.png)
+
 - **Scattering Factor**: Determines the directionality of reflected sound. It controls the ratio between mirror-like (specular) reflections, which bounce at a predictable angle, and scattered (diffuse) reflections, which travel in many random directions.
     - **0.0**: Perfect specular reflection (like a mirror).
     - **1.0**: Perfect diffuse reflection (scatters evenly in all directions).
@@ -111,7 +126,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 > 💡 The absorption coefficient is also influenced by the **scale** of the attached object. The larger the object, the more sound energy is attenuated. Therefore, the final transmission loss is a combination of the coefficient value and the object’s scale in the world. When configuring this parameter, be mindful of both factors to ensure accurate acoustic behavior.
 
-# AudioTracing Environment setting on Project Settings
+# Audio Tracing Environment setting on Project Settings
 
 - The **Audio Tracing Plugin** provides a set of configurable parameters in the **Project Settings**, allowing you to control various aspects of the ray tracing process.
 - Ray tracing performance settings can be tuned for different use cases, enabling adaptive sound tracing behavior based on the scenario.
@@ -148,9 +163,9 @@ These materials enable accurate simulation of acoustic interactions such as refl
 * AudioTracing.HardwareRayTracing.DebugSoundMaterial
 
 # Known Issue
-- If sound does not propagate correctly in enclosed spaces, make sure that the mesh supports Ray Tracing. AudioTracing relies on the same geometry used for GPU Ray Tracing, so if the mesh does not support it, AudioTracing will not function properly.
+- If sound does not propagate correctly in enclosed spaces, make sure that the mesh supports Ray Tracing. Audio Tracing relies on the same geometry used for GPU Ray Tracing, so if the mesh does not support it, Audio Tracing will not function properly.
 
--  AudioTracing provides a default Attenuation Asset. Since AudioTracing builds upon Unreal Engine's native Attenuation system to perform post-processing on audio, any custom attenuation effects set by the user will take precedence and be applied before AudioTracing processing.
+-  Audio Tracing provides a default Attenuation Asset. Since Audio Tracing builds upon Unreal Engine's native Attenuation system to perform post-processing on audio, any custom attenuation effects set by the user will take precedence and be applied before Audio Tracing processing.
 
 ---
 
