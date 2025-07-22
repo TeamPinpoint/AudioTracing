@@ -50,7 +50,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 # How to Apply Audio Tracing Plugin
 
-- You have to follow 4 steps for apply Audio Tracing plugin.
+- You have to follow 3 steps for apply Audio Tracing plugin.
 
 ## 1. Enable Hardware Ray Tracing
 
@@ -78,16 +78,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 - Change `Spatialization Plugin` to `Audio Tracing Spatializer`
 - Change `Source Data Override Plugin` to `AudioTracingAudioSourceDataOverride`
 
-## 3. Attach  Audio Tracing Listener Component to Pawn
-
-![Listener Component](img/ListenerComp.png)
-
-![ATListener](img/ListenerComp2.png)
-
-- Attach the `Audio Tracing Listener` component to your Character or Pawn.
-- This component serves as the starting point for audio ray tracing in the scene.
-
-## 4. Configuring the 'Sound Attenuation' Asset
+## 3. Configuring the 'Sound Attenuation' Asset
 
 - **In the final step,** add a **Sound Attenuation** asset to your sound in order to apply spatialization and plugin-based processing.
 
@@ -115,7 +106,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 - You can set the **Sound Material** Asset in the Details panel.
 
-![AudioTracing EditorMenu](img/AudioTracingEditorMenu.png)
+![Audio Tracing EditorMenu](img/AudioTracingEditorMenu.png)
 
 - In the World or Outliner, you can select one or more actors and right-click to **quickly add or remove Audio Tracing Sound Material Components**. This allows you to apply **Audio Tracing Sound Material Components** to multiple objects at once and easily batch-edit.
 
