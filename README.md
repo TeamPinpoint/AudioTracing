@@ -2,6 +2,21 @@
 
 # **Audio Tracing**
 
+## Table of Contents
+- [Overview](#audio-tracing)
+- [Recommended Specifications](#recommended-specifications)
+- [How to Apply Audio Tracing Plugin](#how-to-apply-audio-tracing-plugin)
+  - [1. Enable Hardware Ray Tracing](#1-enable-hardware-ray-tracing)
+  - [2. Apply Plugin on Project Settings](#2-apply-plugin-on-project-settings)
+  - [3. Attach Audio Tracing Listener Component to Pawn](#3-attach--audio-tracing-listener-component-to-pawn)
+  - [4. Configuring the 'Sound Attenuation' Asset](#4-configuring-the-sound-attenuation-asset)
+- [Audio Tracing Sound Material Component](#audio-tracing-sound-material-component)
+- [Sound Material Asset](#sound-material-asset)
+- [Audio Tracing Environment setting on Project Settings](#audio-tracing-environment-setting-on-project-settings)
+- [Available Console Variables](#available-console-variables)
+- [Known Issue](#known-issue)
+- [Disclaimer](#disclaimer)
+
 ## **Hardware-accelerated ray tracing plugin for audio simulation.**
 
 **Audio Tracing** is a plugin that integrates **real-time Ray Tracing technology** into Unreal Engine's **Sound system** with the goal of achieving more realistic **sound propagation simulation**. It physically calculates complex acoustic properties—such as the position, direction, and reflections of sound sources within a real-time, changing game environment—and applies them to the listener, providing a **realistic and spatial sound experience**.
@@ -100,7 +115,9 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 - You can set the **Sound Material** Asset in the Details panel.
 
-> 💡 You can select one or more meshes placed in the world, right-click, and select **Add Audio Tracing Sound Material Components** to add multiple **Audio Tracing Sound Material Components** with a single click.
+![AudioTracing EditorMenu](img/AudioTracingEditorMenu.png)
+
+- In the World or Outliner, you can select one or more actors and right-click to **quickly add or remove Audio Tracing Sound Material Components**. This allows you to apply **Audio Tracing Sound Material Components** to multiple objects at once and easily batch-edit.
 
 # Sound Material Asset
 
@@ -152,6 +169,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 # Available Console Variables
 * AudioTracing.SoundSpeed
+
 * AudioTracing.HeadWidth
 * AudioTracing.CustomPrimitiveDataStartSlotIndex
 * AudioTracing.ShowDebugVirtualAudio
