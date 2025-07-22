@@ -2,21 +2,6 @@
 
 # **Audio Tracing**
 
-## Table of Contents
-- [Overview](#audio-tracing)
-- [Recommended Specifications](#recommended-specifications)
-- [How to Apply Audio Tracing Plugin](#how-to-apply-audio-tracing-plugin)
-  - [1. Enable Hardware Ray Tracing](#1-enable-hardware-ray-tracing)
-  - [2. Apply Plugin on Project Settings](#2-apply-plugin-on-project-settings)
-  - [3. Attach Audio Tracing Listener Component to Pawn](#3-attach--audio-tracing-listener-component-to-pawn)
-  - [4. Configuring the 'Sound Attenuation' Asset](#4-configuring-the-sound-attenuation-asset)
-- [Audio Tracing Sound Material Component](#audio-tracing-sound-material-component)
-- [Sound Material Asset](#sound-material-asset)
-- [Audio Tracing Environment setting on Project Settings](#audio-tracing-environment-setting-on-project-settings)
-- [Available Console Variables](#available-console-variables)
-- [Known Issue](#known-issue)
-- [Disclaimer](#disclaimer)
-
 ## **Hardware-accelerated ray tracing plugin for audio simulation.**
 
 **Audio Tracing** is a plugin that integrates **real-time Ray Tracing technology** into Unreal Engine's **Sound system** with the goal of achieving more realistic **sound propagation simulation**. It physically calculates complex acoustic properties—such as the position, direction, and reflections of sound sources within a real-time, changing game environment—and applies them to the listener, providing a **realistic and spatial sound experience**.
@@ -27,6 +12,19 @@ Users can apply Audio Tracing to existing sounds with **only minimal modificati
 
 Additionally, the Sound Material feature allows for detailed adjustment of the acoustic properties of each surface. You can **specifically define the acoustic response of each surface** by individually setting scattering coefficients, reflectivity, and absorption coefficients for materials such as wood, glass, and concrete.
 
+## Table of Contents
+- [Overview](#audio-tracing)
+- [Recommended Specifications](#recommended-specifications)
+- [How to Apply Audio Tracing Plugin](#how-to-apply-audio-tracing-plugin)
+  - [1. Enable Hardware Ray Tracing](#1-enable-hardware-ray-tracing)
+  - [2. Apply Plugin on Project Settings](#2-apply-plugin-on-project-settings)
+  - [3. Configuring the 'Sound Attenuation' Asset](#3-configuring-the-sound-attenuation-asset)
+- [Audio Tracing Sound Material Component](#audio-tracing-sound-material-component)
+- [Sound Material Asset](#sound-material-asset)
+- [Audio Tracing Environment setting on Project Settings](#audio-tracing-environment-setting-on-project-settings)
+- [Available Console Variables](#available-console-variables)
+- [Known Issue](#known-issue)
+- [Disclaimer](#disclaimer)
 
 # Recommended Specifications
 
