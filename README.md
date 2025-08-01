@@ -74,11 +74,15 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 - Project Settings → Platforms → Windows → Audio (Only support Windows)
 - Change `Spatialization Plugin` to `Audio Tracing Spatializer`
-- Change `Source Data Override Plugin` to `AudioTracingAudioSourceDataOverride`
+- Change `Source Data Override Plugin` to `Audio Tracing Audio Source Data Override`
 
 ## 3. Configuring the 'Sound Attenuation' Asset
 
 - **In the final step,** add a **Sound Attenuation** asset to your sound in order to apply spatialization and plugin-based processing.
+
+![Volume](img/SoundAttenuation_Volume.png)
+
+- Under the **Attenuation (Volume)** section, check `Enable Volume Attenuation`.
 
 ![Spatialization](img/SoundAttenuation1.png)
 
@@ -104,7 +108,7 @@ These materials enable accurate simulation of acoustic interactions such as refl
 
 - You can set the **Sound Material** Asset in the Details panel.
 
-![Audio Tracing EditorMenu](img/AudioTracingEditorMenu.png)
+![Audio Tracing Editor Menu](img/AudioTracingEditorMenu.png)
 
 - In the World or Outliner, you can select one or more actors and right-click to **quickly add or remove Audio Tracing Sound Material Components**. This allows you to apply **Audio Tracing Sound Material Components** to multiple objects at once and easily batch-edit.
 
