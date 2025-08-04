@@ -142,20 +142,30 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 
 ![Project Settings Audio Tracing](img/ProjectSettings.png)
 
+* Performance
+    * `Minimum Update Interval (s)` : This defines the update interval for audio tracing calculation. A longer interval reduces performance overhead but may result in lower responsiveness and audio instability. A recommended range is between 0.033 and 0.15 seconds.
 * Hardware RayTracing
-  * `Max Reflection` : Defines the maximum number of reflections after being emitted from the listener. Once this limit is reached, the ray will stop and no additional sound paths will be calculated.
-  * `Ray Count` : Specifies the total number of rays emitted during the tracing process. Higher values improve the accuracy of sound simulation, but may have a significant performance cost.
-  * `Max Trace Time` : Determines the maximum trace time for each ray. As rays travel through the scene, their intensity is attenuated based on distance and time. When this time limit is reached, the sound is considered inaudible and is discarded.
-  * `Max Active Sound Sources`: The maximum number of concurrently active sound sources to trace against per frame. When this limit is exceeded, Any sounds beyond this count will fall back to standard audio playback without tracing effects.
-  * `Custom Primitive Data Start Slot Index` : Audio Tracing encodes Sound Material data into **Custom Primitive Data**. If your project uses this data elsewhere (e.g., for visual shaders or gameplay logic), you can offset the start slot index to avoid conflicts. As of **Unreal Engine 5.6**, up to **36** custom primitive data values can be stored per object. The Audio Tracing Plugin groups **4 values per slot** , effectively allowing for **9 usable slots \[0, 8]**. If an invalid slot index is specified, the system will fall back to using the default material.
+    * `Max Reflection` : Defines the maximum number of reflections after being emitted from the listener. Once this limit is reached, the ray will stop and no additional sound paths will be calculated.
+    * `Ray Count` : Specifies the total number of rays emitted during the tracing process. Higher values improve the accuracy of sound simulation, but may have a significant performance cost.
+    * `Max Trace Time` : Determines the maximum trace time for each ray. As rays travel through the scene, their intensity is attenuated based on distance and time. When this time limit is reached, the sound is considered inaudible and is discarded.
+    * `Max Active Sound Sources`: The maximum number of concurrently active sound sources to trace against per frame. When this limit is exceeded, Any sounds beyond this count will fall back to standard audio playback without tracing effects.
+    * `Custom Primitive Data Start Slot Index` : Audio Tracing encodes Sound Material data into **Custom Primitive Data**. If your project uses this data elsewhere (e.g., for visual shaders or gameplay logic), you can offset the start slot index to avoid conflicts. 
+    As of **Unreal Engine 5.6**, up to **36** custom primitive data values can be stored per object. The Audio Tracing Plugin groups **4 values per slot** , effectively allowing for **9 usable slots [0, 8]**.
+    If an invalid slot index is specified, the system will fall back to using the default material.
 * General
-  * `Speed of Sound (cm/s)` : Defines the speed at which sound propagates through the environment. Lower values simulate slower sound travel, resulting in longer delays between direct and reflected sounds.
-  * `Listener Head Width (cm)` : Specifies the distance between the listener's left and right ears. This value affects binaural spatialization and interaural time/level differences used in 3D audio rendering.
+    * `Speed of Sound (cm/s)` : Defines the speed at which sound propagates through the environment. Lower values simulate slower sound travel, resulting in longer delays between direct and reflected sounds.
+    * `Listener Head Width (cm)` : Specifies the distance between the listener's left and right ears. This value affects binaural spatialization and interaural time/level differences used in 3D audio rendering.
+    * Advanced
+        * `Direct Sound Gain (dB)` : Gain of Direct Sound.
+        * `Early Reflection Gain (dB)` : Gain of Early Reflection Sound.
+        * `Reverb Gain (dB)` : Gain of Reverb Sound.
+        * `Early Reflection Max Count` : Specifies the maximum number of early reflections extracted via parameters.
+        * `Reverb Time Multiplier` : A multiplier applied to the reverberation time (RT60). It can be increased to compensate when `Max Reflection` is reduced for performance reasons.
 * Reverb
-  * Audio Tracing uses preconfigured Reverb Submix Assets depending on the spatial characteristics of the environment.
-  * The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, the plugin uses fixed RT60 thresholds of 3.0, 7.0, and 15.0 seconds to classify the space.
-    * In future versions, this classification will be made dynamic by referencing the **Decay Time** parameter defined within the assigned **Submix Effect Reverb Preset Asset**. This will allow more flexible and accurate control over RT60-based reverb behavior.
-  * You may override the default behavior by creating and assigning custom Reverb Submix Assets, allowing you to tailor reverb effects to better fit your sound design.
+    * Audio Tracing uses preconfigured Reverb Submix Assets depending on the spatial characteristics of the environment.
+    * The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, the plugin uses fixed RT60 thresholds of 3.0, 7.0, and 15.0 seconds to classify the space.
+        * In future versions, this classification will be made dynamic by referencing the **Decay Time** parameter defined within the assigned **Submix Effect Reverb Preset Asset**. This will allow more flexible and accurate control over RT60-based reverb behavior.
+    * You may override the default behavior by creating and assigning custom Reverb Submix Assets, allowing you to tailor reverb effects to better fit your sound design.
 
 ## Available Console Variables
 
@@ -171,9 +181,11 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 * AudioTracing.HardwareRayTracing.DebugSoundMaterial
 
 ## Known Issue
-
 * If sound does not propagate correctly in enclosed spaces, make sure that the mesh supports Ray Tracing. Audio Tracing relies on the same geometry used for GPU Ray Tracing, so if the mesh does not support it, Audio Tracing will not function properly.
-* Audio Tracing provides a default Attenuation Asset. Since Audio Tracing builds upon Unreal Engine's native Attenuation system to perform post-processing on audio, any custom attenuation effects set by the user will take precedence and be applied before Audio Tracing processing.
+
+* Ray tracing may be disabled depending on the Viewport Scalability settings. Either the Global Illumination or Reflections option must be set to at least High.
+
+*  Audio Tracing provides a default Attenuation Asset. Since Audio Tracing builds upon Unreal Engine's native Attenuation system to perform post-processing on audio, any custom attenuation effects set by the user will take precedence and be applied before Audio Tracing processing.
 
 ***
 
