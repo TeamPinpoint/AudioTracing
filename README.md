@@ -163,8 +163,7 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
         * `Reverb Time Multiplier` : A multiplier applied to the reverberation time (RT60). It can be increased to compensate when `Max Reflection` is reduced for performance reasons.
 * Reverb
     * Audio Tracing uses preconfigured Reverb Submix Assets depending on the spatial characteristics of the environment.
-    * The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, the plugin uses fixed RT60 thresholds of 3.0, 7.0, and 15.0 seconds to classify the space.
-        * In future versions, this classification will be made dynamic by referencing the **Decay Time** parameter defined within the assigned **Submix Effect Reverb Preset Asset**. This will allow more flexible and accurate control over RT60-based reverb behavior.
+    * The contribution of each reverb type—Short, Medium, and Long—is determined by the estimated RT60 (reverberation time). Internally, it references the Decay Time property of the Submix's Reverb Effector. The default values are 3.0, 7.0, and 15.0 seconds, respectively.
     * You may override the default behavior by creating and assigning custom Reverb Submix Assets, allowing you to tailor reverb effects to better fit your sound design.
 
 ## Available Console Variables
