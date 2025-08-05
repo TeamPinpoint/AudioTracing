@@ -46,6 +46,16 @@ Additionally, the Sound Material feature allows for detailed adjustment of the a
 | GPU | <p>NVIDIA RTX 4060 or higher<br>AMD RX 7700 XT or higher</p>    | Capable of calculating complex bounce paths and simultaneous Scene GI + Audio RT operations.          |
 | RAM | 32GB                                                            | Stable processing of multiple Submixes + MetaSounds and their effects simultaneously.                 |
 
+
+## Pre-Knowledge
+- **AudioTracing** requires some prior knowledge. A basic understanding of Unreal Engine's sound system and how to use it, as well as a general idea of Sound Attenuation, is recommended. You can refer to the following links:
+
+[Working with Audio in Unreal Engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/working-with-audio-in-unreal-engine)  
+[Sound Attenuation in Unreal Engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/sound-attenuation-in-unreal-engine)
+
+- For more detail sound design, Check Unreal Engine's **MetaSound** and **SoundCue** systems.
+- The **Audio Tracing Plugin** always operates on top of the built-in UE sound system.
+
 ## How to Apply Audio Tracing Plugin
 
 * You have to follow 3 steps for apply Audio Tracing plugin.
