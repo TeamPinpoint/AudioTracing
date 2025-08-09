@@ -14,6 +14,8 @@ Users can apply Audio Tracing to existing sounds with **only minimal modificatio
 
 Additionally, the Sound Material feature allows for detailed adjustment of the acoustic properties of each surface. You can **specifically define the acoustic response of each surface** by individually setting scattering coefficients, reflectivity, and absorption coefficients for materials such as wood, glass, and concrete.
 
+# Available on [FAB](https://www.fab.com/ko/listings/8334fed3-f232-4b2f-a250-25f3b150f65c)!
+
 ### Table of Contents
 
 * [Overview](./#audio-tracing)
